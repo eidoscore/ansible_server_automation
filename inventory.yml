@@ -1,0 +1,17 @@
+public ansible_host=3.208.152.85 ansible_python_interpreter=/usr/bin/python3
+
+fe ansible_host=10.50.2.150 ansible_python_interpreter=/usr/bin/python3
+
+be ansible_host=10.50.2.72 ansible_python_interpreter=/usr/bin/python3
+
+db ansible_host=10.50.2.87 ansible_python_interpreter=/usr/bin/python3
+
+jk ansible_host=10.50.2.202 ansible_python_interpreter=/usr/bin/python3
+
+pm ansible_host=10.50.2.186 ansible_python_interpreter=/usr/bin/python3
+
+[docker]
+fe
+be
+jk
+pm

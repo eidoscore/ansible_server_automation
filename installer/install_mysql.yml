@@ -1,0 +1,47 @@
+- hosts: db
+  vars:
+    mysql_user: anwar
+    mysql_password: password
+    mysql_dbname: db_housy
+  tasks:
+          - name: install mysql
+            package:
+                    name: "{{item}}"
+                    state: present
+                    update-cache: yes
+            loop:
+                    - mysql-server
+                    - python3-pymysql
+                    - libmysqlclient-dev
+                    - python3-mysqldb 
+
+          - name: start mysql service
+            service:
+                    name: mysql
+                    state: started
+                    enabled: yes
+
+          - name: create new user
+            mysql_user:
+                    name: "{{mysql_user}}"
+                    password: "{{mysql_password}}"
+                    priv: '*.*:ALL'
+                    host: '%'
+                    state: present
+                    
+          - name: create database
+            mysql_db:
+                    name: "{{mysql_dbname}}"
+                    state: present           
+
+          - name: change ip bind
+            lineinfile:
+                    path: /etc/mysql/mysql.conf.d/mysqld.cnf
+                    regexp: '^bind-address'
+                    line: 'bind-address = 0.0.0.0'
+                    backup: yes
+          
+          - name: restart mysql
+            service:
+                    name: mysql
+                    state: restarted
