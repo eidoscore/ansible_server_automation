@@ -10,7 +10,8 @@
     apt: name={{ certbot_package }} update_cache=yes state=latest
 
   - name: Create and Install Cert Using {{ certbot_plugin }} Plugin
-    command: "certbot --{{ certbot_plugin }} -d  {{ certbot_site_names[inventory_hostname_short] }} -m {{ certbot_mail_address }} --agree-tos --noninteractive --redirect"
+    command: "certbot --{{ certbot_plugin }} -d  {{ item }} -m {{ certbot_mail_address }} --agree-tos --noninteractive --redirect"
+    with_items: - "{{ certbot_site_names }}"
 
 
   - name: Set Letsencrypt Cronjob for Certificate Auto Renewal

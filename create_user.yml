@@ -3,10 +3,10 @@
           - name: "Create user public"
             user:
                     name: public
-                    password: "$hNI82fq4WA1/DsKaIDANTOJ0lqJmGQ5dg8viFF.qzRL1m6neluUtol65yTo1Re2trApawwXpyDiFAIZHNwMOM/"
+                    password: "$6$YFz2kmhmRR$nKiUenpm/mhFVM2qYGcJIXZ6OHyJGer8HJzsFfl72YqcKKQj6jW//4K9n.fDK.BOpzPIXppMpZnBtxeSd/Gb00"
                     groups: sudo
                     state: present
-                    shell: /bin/hash
+                    shell: /bin/bash
                     system: no
                     createhome: yes
                     home: /home/public
@@ -16,23 +16,23 @@
           - name: "Create user frontend"
             user:
                     name: fe
-                    password: "$hNI82fq4WA1/DsKaIDANTOJ0lqJmGQ5dg8viFF.qzRL1m6neluUtol65yTo1Re2trApawwXpyDiFAIZHNwMOM/"
+                    password: "$6$YFz2kmhmRR$nKiUenpm/mhFVM2qYGcJIXZ6OHyJGer8HJzsFfl72YqcKKQj6jW//4K9n.fDK.BOpzPIXppMpZnBtxeSd/Gb00"
                     groups: sudo
                     state: present
-                    shell: /bin/hash
+                    shell: /bin/bash
                     system: no
                     createhome: yes
-                    home: /home/
+                    home: /home/fe
 
 - hosts: be
   tasks:
           - name: "Create user backend"
             user:
                     name: be
-                    password: "$hNI82fq4WA1/DsKaIDANTOJ0lqJmGQ5dg8viFF.qzRL1m6neluUtol65yTo1Re2trApawwXpyDiFAIZHNwMOM/"
+                    password: "$6$YFz2kmhmRR$nKiUenpm/mhFVM2qYGcJIXZ6OHyJGer8HJzsFfl72YqcKKQj6jW//4K9n.fDK.BOpzPIXppMpZnBtxeSd/Gb00"
                     groups: sudo
                     state: present
-                    shell: /bin/hash
+                    shell: /bin/bash
                     system: no
                     createhome: yes
                     home: /home/be
@@ -42,10 +42,10 @@
           - name: "Create user database"
             user:
                     name: db
-                    password: "$hNI82fq4WA1/DsKaIDANTOJ0lqJmGQ5dg8viFF.qzRL1m6neluUtol65yTo1Re2trApawwXpyDiFAIZHNwMOM/"
+                    password: "$6$YFz2kmhmRR$nKiUenpm/mhFVM2qYGcJIXZ6OHyJGer8HJzsFfl72YqcKKQj6jW//4K9n.fDK.BOpzPIXppMpZnBtxeSd/Gb00"
                     groups: sudo
                     state: present
-                    shell: /bin/hash
+                    shell: /bin/bash
                     system: no
                     createhome: yes
                     home: /home/db
@@ -55,10 +55,10 @@
           - name: "Create user jenkins"
             user:
                     name: jk
-                    password: "$hNI82fq4WA1/DsKaIDANTOJ0lqJmGQ5dg8viFF.qzRL1m6neluUtol65yTo1Re2trApawwXpyDiFAIZHNwMOM/"
+                    password: "$6$YFz2kmhmRR$nKiUenpm/mhFVM2qYGcJIXZ6OHyJGer8HJzsFfl72YqcKKQj6jW//4K9n.fDK.BOpzPIXppMpZnBtxeSd/Gb00"
                     groups: sudo
                     state: present
-                    shell: /bin/hash
+                    shell: /bin/bash
                     system: no
                     createhome: yes
                     home: /home/jk
@@ -67,11 +67,11 @@
   tasks:
           - name: "Create user prometheus"
             user:
-                    name: ps
-                    password: "$hNI82fq4WA1/DsKaIDANTOJ0lqJmGQ5dg8viFF.qzRL1m6neluUtol65yTo1Re2trApawwXpyDiFAIZHNwMOM/"
+                    name: pm
+                    password: "$6$YFz2kmhmRR$nKiUenpm/mhFVM2qYGcJIXZ6OHyJGer8HJzsFfl72YqcKKQj6jW//4K9n.fDK.BOpzPIXppMpZnBtxeSd/Gb00"
                     groups: sudo
                     state: present
-                    shell: /bin/hash
+                    shell: /bin/bash
                     system: no
                     createhome: yes
                     home: /home/pm

@@ -3,6 +3,9 @@
           - name: run housy-fe
             command: docker run --name frontend -it -p 3000:3000 eidoscore/frontend_housy
 
+          - name: run housy-fe2
+            command: docker run --name frontend2 -it -p 3001:3000 eidoscore/frontend_housy
+
 - hosts: be
   tasks:
           - name: run housy-be

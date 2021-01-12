@@ -1,0 +1,19 @@
+- hosts: all
+  become: yes
+  tasks:
+  - name: buat .ssh
+    file:
+      path: /home/anwar/.ssh
+      state: directory
+      
+  - name: Copy Private Key
+    copy:
+      src: /home/anwar/.ssh/id_rsa
+      dest: /home/anwar/.ssh/id_rsa
+
+  - name: authorized_keys
+    copy:
+      src: /home/anwar/.ssh/id_rsa.pub
+      dest: /home/anwar/.ssh/authorized_keys
+
+#ssh-copy-id .ssh/id_rsa user@ip

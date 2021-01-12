@@ -1,0 +1,18 @@
+- hosts: be
+  tasks:
+          - name: git clone
+            git:
+                    repo: git@github.com:eidoscore/housy-backend.git
+                    version: master
+                    dest: ~/housy-be/
+                    accept_hostkey: yes
+
+                    
+- hosts: fe1:fe2 
+  tasks:
+          - name: git clone
+            git:
+                    repo: git@github.com:eidoscore/housy-frontend.git
+                    version: master
+                    dest: ~/housy-fe/
+                    accept_hostkey: yes
