@@ -1,16 +1,14 @@
-public ansible_host=52.206.248.155 
+public ansible_host=52.206.248.155 ansible_user=public
 
-fe ansible_host=10.1.42 
+fe ansible_host=10.10.1.42 ansible_user=fe
 
-be ansible_host=10.10.1.70 
+be ansible_host=10.10.1.70 ansible_user=be
 
-db ansible_host=10.10.1.22 
+db ansible_host=10.10.1.22 ansible_user=db
 
-jk ansible_host=10.10.1.59 
+jk ansible_host=10.10.1.59 ansible_user=jk
 
-pm ansible_host=10.50.1.183 
-
-as ansible_host=10.50.1.253
+pm ansible_host=10.10.1.83 ansible_user=prometheus
 
 
 [docker]
@@ -18,6 +16,7 @@ fe
 be
 jk
 pm
+db
 
 
 [all:vars]
