@@ -1,0 +1,36 @@
+docker run -d -p 3307:3306 --name mariadb-galera-0 \
+  -e MARIADB_GALERA_CLUSTER_BOOTSTRAP=yes \
+  -e MARIADB_GALERA_CLUSTER_NAME=my_galera \
+  -e MARIADB_GALERA_MARIABACKUP_USER=my_mariabackup_user \
+  -e MARIADB_GALERA_MARIABACKUP_PASSWORD=my_mariabackup_password \
+  -e MARIADB_ROOT_PASSWORD=mysql_root_password \
+  -e MARIADB_USER=anwar \
+  -e MARIADB_PASSWORD=password \
+  -e MARIADB_DATABASE=db_housy \
+  bitnami/mariadb-galera:latest
+
+
+docker run -d -p 3308:3306 --name mariadb-galera-1 --link mariadb-galera-0:mariadb-galera \
+   -e MARIADB_GALERA_CLUSTER_NAME=my_galera \
+   -e MARIADB_GALERA_CLUSTER_ADDRESS=gcomm://mariadb-galera \
+   -e MARIADB_GALERA_MARIABACKUP_USER=my_mariabackup_user \
+   -e MARIADB_GALERA_MARIABACKUP_PASSWORD=my_mariabackup_password \
+   bitnami/mariadb-galera:latest
+
+docker run -d -p 3309:3306 --name mariadb-galera-2 --link mariadb-galera-0:mariadb-galera \
+   -e MARIADB_GALERA_CLUSTER_NAME=my_galera \
+   -e MARIADB_GALERA_CLUSTER_ADDRESS=gcomm://mariadb-galera \
+   -e MARIADB_GALERA_MARIABACKUP_USER=my_mariabackup_user \
+   -e MARIADB_GALERA_MARIABACKUP_PASSWORD=my_mariabackup_password \
+   bitnami/mariadb-galera:latest
+
+
+listen galera 
+     bind 10.10.1.247:3306
+     balance source
+     mode tcp
+     option tcpka
+     option mysql-check user haproxy
+     server node1 10.10.1.247:3307
+     server node2 10.10.1.247:3308
+     server node2 10.10.1.247:3309

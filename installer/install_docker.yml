@@ -1,4 +1,4 @@
-- hosts: fe:be:pm:jk
+- hosts: fe:be:pm:jk:db
   become: yes
   tasks:
   - name: Install docker packages
@@ -85,6 +85,3 @@
               url : https://github.com/docker/compose/releases/download/1.25.1-rc1/docker-compose-Linux-x86_64
               dest: /usr/local/bin/docker-compose
               mode: '+x'
-
-          - name: node exporter
-            shell: docker run --name node_exporter -p 9100:9100 -d --net="host" --pid="host" -v "/:/host:ro,rslave" quay.io/prometheus/node-exporter --path.rootfs=/host

@@ -4,7 +4,7 @@
             user:
                     name: public
                     password: "$6$YFz2kmhmRR$nKiUenpm/mhFVM2qYGcJIXZ6OHyJGer8HJzsFfl72YqcKKQj6jW//4K9n.fDK.BOpzPIXppMpZnBtxeSd/Gb00"
-                    groups: sudo
+                    groups: sudo,docker
                     state: present
                     shell: /bin/bash
                     system: no
@@ -17,7 +17,7 @@
             user:
                     name: fe
                     password: "$6$YFz2kmhmRR$nKiUenpm/mhFVM2qYGcJIXZ6OHyJGer8HJzsFfl72YqcKKQj6jW//4K9n.fDK.BOpzPIXppMpZnBtxeSd/Gb00"
-                    groups: sudo
+                    groups: sudo,docker
                     state: present
                     shell: /bin/bash
                     system: no
@@ -30,7 +30,7 @@
             user:
                     name: be
                     password: "$6$YFz2kmhmRR$nKiUenpm/mhFVM2qYGcJIXZ6OHyJGer8HJzsFfl72YqcKKQj6jW//4K9n.fDK.BOpzPIXppMpZnBtxeSd/Gb00"
-                    groups: sudo
+                    groups: sudo,docker
                     state: present
                     shell: /bin/bash
                     system: no
@@ -43,7 +43,7 @@
             user:
                     name: db
                     password: "$6$YFz2kmhmRR$nKiUenpm/mhFVM2qYGcJIXZ6OHyJGer8HJzsFfl72YqcKKQj6jW//4K9n.fDK.BOpzPIXppMpZnBtxeSd/Gb00"
-                    groups: sudo
+                    groups: sudo,docker
                     state: present
                     shell: /bin/bash
                     system: no
@@ -56,7 +56,7 @@
             user:
                     name: jk
                     password: "$6$YFz2kmhmRR$nKiUenpm/mhFVM2qYGcJIXZ6OHyJGer8HJzsFfl72YqcKKQj6jW//4K9n.fDK.BOpzPIXppMpZnBtxeSd/Gb00"
-                    groups: sudo
+                    groups: sudo,docker
                     state: present
                     shell: /bin/bash
                     system: no
@@ -69,7 +69,7 @@
             user:
                     name: pm
                     password: "$6$YFz2kmhmRR$nKiUenpm/mhFVM2qYGcJIXZ6OHyJGer8HJzsFfl72YqcKKQj6jW//4K9n.fDK.BOpzPIXppMpZnBtxeSd/Gb00"
-                    groups: sudo
+                    groups: sudo,docker
                     state: present
                     shell: /bin/bash
                     system: no
